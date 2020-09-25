@@ -18,6 +18,8 @@ Input: nums = [1,2,3]
 Output: 0
 ```
 
+## Template
+
 ```ts
 // number_of_good_pairs_test.ts
 function numIdenticalPairs(nums: number[]) {

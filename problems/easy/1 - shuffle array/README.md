@@ -18,6 +18,8 @@ Input: nums = [1,1,2,2], n = 2
 Output: [1,2,1,2]
 ```
 
+## Template
+
 ```ts
 // shuffle_array_test.ts
 export function shuffle(nums: number[], n: number) {
