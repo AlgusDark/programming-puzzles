@@ -6,7 +6,7 @@ This repo is part of a learning experience for sharing and keep growing, but mos
 
 ## Structure
 
-The [problems](problems) folder has 3 categories ([Easy](easy), [medium](medium) and [hard](hard)) with several numbered folders that contains a puzzle. The numbering is just for ordering the puzzles by adding time, so you can start from any number without any problem.
+The [problems](problems) folder has 3 categories (_easy_, _medium_ and _hard_) with several numbered folders that contains a puzzle. The numbering is just for ordering the puzzles by adding time, so you can start from any number without any problem.
 
 ## How to run tests
 
