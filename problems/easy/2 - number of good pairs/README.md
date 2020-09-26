@@ -20,8 +20,10 @@ Output: 0
 
 ## Template
 
+_number_of_good_pairs_test.ts_
+
 ```ts
-// number_of_good_pairs_test.ts
+import { assertEquals } from "testing/asserts.ts";
 function numIdenticalPairs(nums: number[]) {
   // Write your solution
 }

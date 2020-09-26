@@ -8,7 +8,7 @@ This repo is part of a learning experience for sharing and keep growing, but mos
 
 The [problems](problems) folder has 3 categories (_easy_, _medium_ and _hard_) with several numbered folders that contains a puzzle. The numbering is just for ordering the puzzles by adding time, so you can start from any number without any problem.
 
-Once you enter to any folder containing a puzzle you will be able to read the description of the problem. It will contain a **template** you could use for writing your solution. Try to not peeking at the `*.ts` file before you have your own solution.
+Once you enter to any folder containing a puzzle you will be able to read the description of the problem. It will contain a **template** you could use for writing your solution. Try to not peeking at the `*_test.ts` file before you have your own solution.
 
 ## How to run tests
 

@@ -19,7 +19,7 @@ import { assertEquals } from "testing/asserts.ts";
  *       Input: nums = [1,1,2,2], n = 2
  *       Output: [1,2,1,2]
  */
-export function shuffle(nums: number[], n: number) {
+function shuffle(nums: number[], n: number) {
   if (nums.length !== n * 2) return null;
 
   let array = [];

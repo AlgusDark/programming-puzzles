@@ -20,9 +20,12 @@ Output: [1,2,1,2]
 
 ## Template
 
+_shuffle_array_test.ts_
+
 ```ts
-// shuffle_array_test.ts
-export function shuffle(nums: number[], n: number) {
+import { assertEquals } from "testing/asserts.ts";
+
+function shuffle(nums: number[], n: number) {
   // Write your solution
 }
 
