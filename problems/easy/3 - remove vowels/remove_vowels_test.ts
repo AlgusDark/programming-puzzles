@@ -9,6 +9,7 @@ import { assertEquals } from "testing/asserts.ts";
  * 
  */
 function removeVowels(str: string) {
+  /** Time: O(n) **/
   let vowels = ["a", "e", "i", "o", "u"];
   let newStr = "";
 
@@ -20,13 +21,14 @@ function removeVowels(str: string) {
     }
   }
 
-  // It could be solved with a regular expression:
-  // return str.replace(/[aeiou]/gi, ''); *
+  /**
+   * It could be solved with a regular expression:
+   *       return str.replace(/[aeiou]/gi, ''); *
+   */
 
   return newStr;
 }
 
-/** Time: O(n) **/
 Deno.test("removeVowels", () => {
   let actual = removeVowels("what is your name ?");
   let expected = "wht s yr nm ?";
