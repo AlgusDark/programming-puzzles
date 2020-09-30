@@ -12,7 +12,7 @@ the same characters with same frequency. Also, **abccab**, **rotor** and
 a lapindrome. The two halves contain the same characters but their
 frequencies do not match.
 
-## ExampleS
+## Examples
 
 ```
 Input: "gaga"
