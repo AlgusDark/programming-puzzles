@@ -33,14 +33,14 @@ Output: true
 
 ## Template
 
-_lapindrome_test.ts_
+_is_valid.ts_
 
 ```ts
 function isValid(str: string) {
   // Write your solution
 }
 
-Deno.test("lapindrome", () => {
+Deno.test("isValid", () => {
   let fixtures = [
     {
       args: "()",
