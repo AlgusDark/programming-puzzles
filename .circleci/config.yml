@@ -66,7 +66,6 @@ jobs:
     steps:
       - checkout
       - deno-cli
-      - deno-cache
       - run: deno test --importmap=./import_map.json --unstable
 
 workflows:
