@@ -1,0 +1,76 @@
+version: 2.1
+
+commands:
+  deno-cli:
+    parameters:
+      deno_version:
+        default: "v1.4.4"
+        description: Deno version
+        type: string
+      group_id:
+        default: "3005"
+        description: Group ID
+        type: string
+      user_id:
+        default: "3005"
+        description: User ID
+        type: string
+    steps:
+      - run:
+          name: Install Deno
+          command: |
+            apk add --virtual .download --no-cache curl \
+            && curl -fsSL https://github.com/denoland/deno/releases/download/<<parameters.deno_version>>/deno-x86_64-unknown-linux-gnu.zip \
+                    --output deno.zip \
+            && unzip deno.zip \
+            && rm deno.zip \
+            && chmod 777 deno \
+            && mv deno /bin/deno \
+            && apk del .download
+      - run:
+          name: Deno Config
+          command: |
+            addgroup -g <<parameters.group_id>> -S deno \
+            && adduser -u <<parameters.user_id>> -S deno -G deno \
+            && mkdir /deno-dir/ \
+            && chown deno:deno /deno-dir/
+  deno-cache:
+    parameters:
+      deps_location:
+        default: "dependencies.ts"
+        description: Location of your dependencies file
+        type: string
+      deps_key:
+        default: "dependencies"
+        description: Name of dependencies key
+        type: string
+    steps:
+      - restore_cache:
+          key: dependencies
+          paths:
+            - <<parameters.deps_location>>
+      - run: deno cache <<parameters.deps_location>>
+      - save_cache:
+          key: dependencies
+          paths:
+            - <<parameters.deps_location>>
+
+executors:
+  default:
+    docker:
+      - image: frolvlad/alpine-glibc:alpine-3.12_glibc-2.32
+
+jobs:
+  test:
+    executor: default
+    steps:
+      - checkout
+      - deno-cli
+      - deno-cache
+      - run: deno test --importmap=./import_map.json --unstable
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - test
